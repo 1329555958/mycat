@@ -37,6 +37,66 @@
 
     </schema>
 
+    <schema name="payment" checkSQLschema="false" sqlMaxLimit="100">
+        <table name="DUAL" dataNode="dn1"/>
+        <table name="t_sequence" primaryKey="NAME" dataNode="dn1"/>
+        <table name="tb_biz_config" primaryKey="CONFIG_ID" dataNode="dn1,dn2" rule="rule-payment-payment_seq_no-2"/>
+        <table name="tb_biz_payment_order" primaryKey="NAME" dataNode="dn1,dn2"
+               rule="rule-payment-biz_payment_seq_no-2"/>
+        <table name="tb_settlement_template" dataNode="dn1"/>
+        <table name="tb_settlement_session" primaryKey="SETTLEMENT_SESSION_ID" dataNode="dn1,dn2"
+               rule="rule-payment-settlement_session_id-2"/>
+        <table name="tb_settlement_order" primaryKey="SETTLEMENT_ORDER_ID" dataNode="dn1,dn2"
+               rule="rule-payment-session_id-2"/>
+        <table name="tb_settlement_cycle" dataNode="dn1"/>
+        <table name="tb_session_template" dataNode="dn1"/>
+        <table name="tb_retry_lock" dataNode="dn1"/>
+        <table name="tb_refund_limit" dataNode="dn1"/>
+        <table name="tb_refresh" dataNode="dn1"/>
+        <table name="tb_ps_cs_rule_relation" dataNode="dn1"/>
+        <table name="tb_payment_state_mapping" dataNode="dn1"/>
+        <table name="tb_payment_state_his" primaryKey="HIS_ID" dataNode="dn1,dn2" rule="rule-payment-payment_seq_no-2"/>
+        <table name="tb_payment_state" primaryKey="PAYMENT_SEQ_NO" dataNode="dn1,dn2"
+               rule="rule-payment-payment_seq_no-2"/>
+        <table name="tb_payment_service_code" dataNode="dn1"/>
+        <table name="tb_payment_service" dataNode="dn1"/>
+        <table name="tb_payment_retry_ctrl" dataNode="dn1"/>
+        <table name="tb_payment_process" dataNode="dn1"/>
+        <table name="tb_payment_order" primaryKey="PAYMENT_SEQ_NO" dataNode="dn1,dn2"
+               rule="rule-payment-payment_seq_no-2"/>
+        <table name="tb_payment_ctrl" primaryKey="CTRL_ID" dataNode="dn1,dn2" rule="rule-payment-payment_seq_no-2"/>
+        <table name="tb_party_payment_funds" primaryKey="PAYMENT_FUNDS_ID" dataNode="dn1,dn2"
+               rule="rule-payment-payment_seq_no-2"/>
+        <table name="tb_party_payment" primaryKey="PAYMENT_PARTY_ID" dataNode="dn1,dn2"
+               rule="rule-payment-payment_seq_no-2"/>
+        <table name="tb_party_info" primaryKey="ID" dataNode="dn1"/>
+        <table name="tb_party_account" primaryKey="ID" dataNode="dn1"/>
+        <table name="tb_message_eventcode" dataNode="dn1"/>
+        <table name="tb_message_config" dataNode="dn1"/>
+        <table name="tb_message" primaryKey="MESSAGE_ID" dataNode="dn1,dn2" rule="rule-payment-message_key-2"/>
+        <table name="tb_machine_monitor" dataNode="dn1"/>
+        <table name="tb_generate_map" dataNode="dn1"/>
+        <table name="tb_generate_group" dataNode="dn1"/>
+        <table name="tb_generate" dataNode="dn1"/>
+        <table name="tb_funds_payment_result" primaryKey="PAYMENT_SEQ_NO" dataNode="dn1,dn2"
+               rule="rule-payment-payment_seq_no-2"/>
+        <table name="tb_funds_payment_ctrl" primaryKey="CTRL_ID" dataNode="dn1"/>
+        <table name="tb_daemon_task_trigger" dataNode="dn1"/>
+        <table name="tb_cs_rule_item_outer" dataNode="dn1"/>
+        <table name="tb_cs_rule_item_inner" dataNode="dn1"/>
+        <table name="tb_cs_rule" primaryKey="NAME" dataNode="dn1"/>
+        <table name="tb_cs_carrier" primaryKey="REQUEST_NO" dataNode="dn1,dn2" rule="rule-payment-session_id-2"/>
+        <table name="tb_cs_agreement" dataNode="dn1"/>
+        <table name="tb_clearing_order_outer" primaryKey="CLEARING_ORDER_ID" dataNode="dn1,dn2"
+               rule="rule-payment-request_no-2"/>
+        <table name="tb_clearing_order_inner" primaryKey="CLEARING_ORDER_ID" dataNode="dn1,dn2"
+               rule="rule-payment-request_no-2"/>
+        <table name="tb_clearing_code" dataNode="dn1"/>
+        <table name="tb_biz_state_his" primaryKey="HIS_ID" dataNode="dn1,dn2"
+               rule="rule-payment-biz_payment_seq_no-2"/>
+
+    </schema>
+
     <dataNode name="dn1" dataHost="host1" database="db1"/>
     <dataNode name="dn2" dataHost="host2" database="db2"/>
 

@@ -9,6 +9,8 @@
 	under the License. -->
 <!DOCTYPE mycat:rule SYSTEM "rule.dtd">
 <mycat:rule xmlns:mycat="http://io.mycat/">
+
+    <!--dpm -->
     <tableRule name="rule-account-no-2">
         <rule>
             <columns>ACCOUNT_NO</columns>
@@ -20,6 +22,44 @@
         <rule>
             <columns>TRANSACTION_NO</columns>
             <algorithm>sharding-by-stringhash16-2</algorithm>
+        </rule>
+    </tableRule>
+
+    <!--payment -->
+    <tableRule name="rule-payment-payment_seq_no-2">
+        <rule>
+            <columns>PAYMENT_SEQ_NO</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-payment-request_no-2">
+        <rule>
+            <columns>REQUEST_NO</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-payment-biz_payment_seq_no-2">
+        <rule>
+            <columns>BIZ_PAYMENT_SEQ_NO</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-payment-session_id-2">
+        <rule>
+            <columns>SESSION_ID</columns>
+            <algorithm>sharding-by-stringhash16-2</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-payment-message_key-2">
+        <rule>
+            <columns>MESSAGE_KEY</columns>
+            <algorithm>sharding-by-stringhash10-2-10</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-payment-settlement_session_id-2">
+        <rule>
+            <columns>SETTLEMENT_SESSION_ID</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
         </rule>
     </tableRule>
 
@@ -130,6 +170,16 @@
         <property name="totalBuckets">3</property>
     </function>
 
+    <function name="sharding-by-stringhash10-2-1" class="io.mycat.route.function.PartitionByString">
+        <property name="partitionLength">53,971</property><!-- 0-2=>0 3-5=>1 6-9=>2 -->
+        <property name="partitionCount">1,1</property>
+        <property name="hashSlice">-1:</property>
+    </function>
+    <function name="sharding-by-stringhash10-2-10" class="io.mycat.route.function.PartitionByString">
+        <property name="partitionLength">53,971</property><!-- 0-2=>0 3-5=>1 6-9=>2 -->
+        <property name="partitionCount">1,1</property>
+        <property name="hashSlice">-10:</property>
+    </function>
     <function name="sharding-by-stringhash10-2" class="io.mycat.route.function.PartitionByString">
         <property name="partitionLength">53,971</property><!-- 0-2=>0 3-5=>1 6-9=>2 -->
         <property name="partitionCount">1,1</property>
