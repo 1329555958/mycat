@@ -79,8 +79,7 @@
 
     <user name="root">
         <property name="password">123456</property>
-        <property name="schemas">dpm</property>
-
+        <property name="schemas">dpm,payment,tss</property>
         <!-- 表级 DML 权限设置 -->
         <!--
         <privileges check="false">
@@ -97,5 +96,14 @@
         <property name="schemas">dpm</property>
         <!--<property name="readOnly">true</property>-->
     </user>
-
+    <user name="paymentuser">
+        <property name="password">paymentuser</property>
+        <property name="schemas">payment</property>
+        <!--<property name="readOnly">true</property>-->
+    </user>
+    <user name="tssuser">
+        <property name="password">tssuser</property>
+        <property name="schemas">tss</property>
+        <!--<property name="readOnly">true</property>-->
+    </user>
 </mycat:server>

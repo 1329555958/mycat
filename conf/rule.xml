@@ -63,6 +63,22 @@
         </rule>
     </tableRule>
 
+    <!-- tss -->
+    <tableRule name="rule-tss-payment_voucher_no-2">
+        <rule>
+            <columns>PAYMENT_VOUCHER_NO</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+
+    <tableRule name="rule-tss-trade_voucher_no-2">
+        <rule>
+            <columns>TRADE_VOUCHER_NO</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+
+    <!--配置结束 -->
 
     <tableRule name="sharding-by-intfile">
         <rule>
