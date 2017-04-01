@@ -68,7 +68,7 @@
         <table name="tb_payment_order" primaryKey="PAYMENT_SEQ_NO" dataNode="payment1,payment2"
                rule="rule-payment-payment_seq_no-2"/>
         <table name="tb_payment_ctrl" primaryKey="CTRL_ID" dataNode="payment1,payment2"
-               rule="rule-payment-payment_seq_no-2"/>
+               rule="rule-payment-biz_payment_seq_no-2"/>
         <table name="tb_party_payment_funds" primaryKey="PAYMENT_FUNDS_ID" dataNode="payment1,payment2"
                rule="rule-payment-payment_seq_no-2"/>
         <table name="tb_party_payment" primaryKey="PAYMENT_PARTY_ID" dataNode="payment1,payment2"
