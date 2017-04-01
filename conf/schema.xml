@@ -9,11 +9,12 @@
         <table name="t_act_account_titile" primaryKey="TITLE_SEQ_NO" dataNode="dpm1"/>
         <table name="t_dpm_account_crl_def" dataNode="dpm1"/>
         <table name="t_dpm_account_entry" primaryKey="ENTRY_SEQ_NO" dataNode="dpm1"/>
-        <table name="t_dpm_buffer_detail" primaryKey="BUFFER_DETAIL_ID" dataNode="dpm1"/>
+        <table name="t_dpm_buffer_detail" primaryKey="BUFFER_DETAIL_ID" dataNode="dpm1,dpm2"
+               rule="rule-transaction-no-2"/>
 
         <table name="t_dpm_buffer_detail_log" primaryKey="BUFFER_DETAIL_ID" dataNode="dpm1,dpm2"
                rule="rule-transaction-no-2"/>
-        <table name="t_dpm_buffer_rule" primaryKey="BUFFER_RULE_ID" dataNode="dpm1,dpm2" rule="rule-transaction-no-2"/>
+        <table name="t_dpm_buffer_rule" primaryKey="BUFFER_RULE_ID" dataNode="dpm1"/>
         <table name="t_dpm_pay_transaction" primaryKey="TRANSACTION_ID" dataNode="dpm1,dpm2"
                rule="rule-transaction-no-2"/>
         <table name="t_dpm_subacc_fundattribute" dataNode="dpm1"/>
@@ -40,7 +41,8 @@
     <schema name="payment" checkSQLschema="true" sqlMaxLimit="100">
         <table name="DUAL" dataNode="payment1"/>
         <table name="t_sequence" primaryKey="NAME" dataNode="payment1"/>
-        <table name="tb_biz_config" primaryKey="CONFIG_ID" dataNode="payment1,payment2" rule="rule-payment-payment_seq_no-2"/>
+        <table name="tb_biz_config" primaryKey="CONFIG_ID" dataNode="payment1,payment2"
+               rule="rule-payment-payment_seq_no-2"/>
         <table name="tb_biz_payment_order" primaryKey="NAME" dataNode="payment1,payment2"
                rule="rule-payment-biz_payment_seq_no-2"/>
         <table name="tb_settlement_template" dataNode="payment1"/>
@@ -55,7 +57,8 @@
         <table name="tb_refresh" dataNode="payment1"/>
         <table name="tb_ps_cs_rule_relation" dataNode="payment1"/>
         <table name="tb_payment_state_mapping" dataNode="payment1"/>
-        <table name="tb_payment_state_his" primaryKey="HIS_ID" dataNode="payment1,payment2" rule="rule-payment-payment_seq_no-2"/>
+        <table name="tb_payment_state_his" primaryKey="HIS_ID" dataNode="payment1,payment2"
+               rule="rule-payment-payment_seq_no-2"/>
         <table name="tb_payment_state" primaryKey="PAYMENT_SEQ_NO" dataNode="payment1,payment2"
                rule="rule-payment-payment_seq_no-2"/>
         <table name="tb_payment_service_code" dataNode="payment1"/>
@@ -64,7 +67,8 @@
         <table name="tb_payment_process" dataNode="payment1"/>
         <table name="tb_payment_order" primaryKey="PAYMENT_SEQ_NO" dataNode="payment1,payment2"
                rule="rule-payment-payment_seq_no-2"/>
-        <table name="tb_payment_ctrl" primaryKey="CTRL_ID" dataNode="payment1,payment2" rule="rule-payment-payment_seq_no-2"/>
+        <table name="tb_payment_ctrl" primaryKey="CTRL_ID" dataNode="payment1,payment2"
+               rule="rule-payment-payment_seq_no-2"/>
         <table name="tb_party_payment_funds" primaryKey="PAYMENT_FUNDS_ID" dataNode="payment1,payment2"
                rule="rule-payment-payment_seq_no-2"/>
         <table name="tb_party_payment" primaryKey="PAYMENT_PARTY_ID" dataNode="payment1,payment2"
@@ -73,7 +77,8 @@
         <table name="tb_party_account" primaryKey="ID" dataNode="payment1"/>
         <table name="tb_message_eventcode" dataNode="payment1"/>
         <table name="tb_message_config" dataNode="payment1"/>
-        <table name="tb_message" primaryKey="MESSAGE_ID" dataNode="payment1,payment2" rule="rule-payment-message_key-2"/>
+        <table name="tb_message" primaryKey="MESSAGE_ID" dataNode="payment1,payment2"
+               rule="rule-payment-message_key-2"/>
         <table name="tb_machine_monitor" dataNode="payment1"/>
         <table name="tb_generate_map" dataNode="payment1"/>
         <table name="tb_generate_group" dataNode="payment1"/>
@@ -85,7 +90,8 @@
         <table name="tb_cs_rule_item_outer" dataNode="payment1"/>
         <table name="tb_cs_rule_item_inner" dataNode="payment1"/>
         <table name="tb_cs_rule" primaryKey="NAME" dataNode="payment1"/>
-        <table name="tb_cs_carrier" primaryKey="REQUEST_NO" dataNode="payment1,payment2" rule="rule-payment-session_id-2"/>
+        <table name="tb_cs_carrier" primaryKey="REQUEST_NO" dataNode="payment1,payment2"
+               rule="rule-payment-session_id-2"/>
         <table name="tb_cs_agreement" dataNode="payment1"/>
         <table name="tb_clearing_order_outer" primaryKey="CLEARING_ORDER_ID" dataNode="payment1,payment2"
                rule="rule-payment-request_no-2"/>
@@ -116,7 +122,8 @@
         <table name="t_split_party" primaryKey="SPLIT_ID" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
         <table name="t_payment_order" primaryKey="PAYMENT_VOUCHER_NO" dataNode="tss1,tss2"
                rule="rule-tss-payment_voucher_no-2"/>
-        <table name="t_pay_method" primaryKey="PAY_METHOD_ID" dataNode="tss1,tss2" rule="rule-tss-payment_voucher_no-2"/>
+        <table name="t_pay_method" primaryKey="PAY_METHOD_ID" dataNode="tss1,tss2"
+               rule="rule-tss-payment_voucher_no-2"/>
         <table name="t_payment_party" primaryKey="PAYMENT_PARTY_ID" dataNode="tss1,tss2"
                rule="rule-tss-payment_voucher_no-2"/>
     </schema>
@@ -127,7 +134,7 @@
     <dataNode name="payment2" dataHost="host2" database="payment"/>
     <dataNode name="tss1" dataHost="host1" database="tss"/>
     <dataNode name="tss2" dataHost="host2" database="tss"/>
-    
+
     <dataHost name="host1" maxCon="1000" minCon="10" balance="0"
               writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100">
         <heartbeat>select user()</heartbeat>
