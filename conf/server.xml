@@ -106,4 +106,12 @@
         <property name="schemas">tss</property>
         <!--<property name="readOnly">true</property>-->
     </user>
+    <user name="reader">
+        <property name="password">reader</property>
+        <property name="schemas">appdatamonitor, authorize, cert, cmf ,counter ,dpm ,event ,ffs ,gop guardian
+            ,information_schema ,member mns ,onewallet ,payment, pbs, rms ,ssop ,tss, ues ,wallet
+        </property>
+        <property name="readOnly">true</property>
+    </user>
+
 </mycat:server>
