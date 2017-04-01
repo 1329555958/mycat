@@ -128,60 +128,44 @@
                rule="rule-tss-payment_voucher_no-2"/>
     </schema>
 
-    <dataNode name="appdatamonitor" dataHost="host1" database="appdatamonitor"/>
     <schema name="appdatamonitor" checkSQLschema="true" sqlMaxLimit="100" dataNode="appdatamonitor"/>
-
-    <dataNode name="authorize" dataHost="host1" database="authorize"/>
     <schema name="authorize" checkSQLschema="true" sqlMaxLimit="100" dataNode="authorize"/>
-
-    <dataNode name="cert" dataHost="host1" database="cert"/>
     <schema name="cert" checkSQLschema="true" sqlMaxLimit="100" dataNode="cert"/>
-
-    <dataNode name="cmf" dataHost="host1" database="cmf"/>
     <schema name="cmf" checkSQLschema="true" sqlMaxLimit="100" dataNode="cmf"/>
-
-    <dataNode name="counter" dataHost="host1" database="counter"/>
     <schema name="counter" checkSQLschema="true" sqlMaxLimit="100" dataNode="counter"/>
-
-    <dataNode name="event" dataHost="host1" database="event"/>
     <schema name="event" checkSQLschema="true" sqlMaxLimit="100" dataNode="event"/>
-
-    <dataNode name="ffs" dataHost="host1" database="ffs"/>
     <schema name="ffs" checkSQLschema="true" sqlMaxLimit="100" dataNode="ffs"/>
-
-    <dataNode name="gop" dataHost="host1" database="gop"/>
     <schema name="gop" checkSQLschema="true" sqlMaxLimit="100" dataNode="gop"/>
-
-    <dataNode name="guardian" dataHost="host1" database="guardian"/>
     <schema name="guardian" checkSQLschema="true" sqlMaxLimit="100" dataNode="guardian"/>
-
-    <dataNode name="information_schema" dataHost="host1" database="information_schema"/>
     <schema name="information_schema" checkSQLschema="true" sqlMaxLimit="100" dataNode="information_schema"/>
-
-    <dataNode name="member" dataHost="host1" database="member"/>
     <schema name="member" checkSQLschema="true" sqlMaxLimit="100" dataNode="member"/>
-
-    <dataNode name="mns" dataHost="host1" database="mns"/>
     <schema name="mns" checkSQLschema="true" sqlMaxLimit="100" dataNode="mns"/>
-
-    <dataNode name="onewallet" dataHost="host1" database="onewallet"/>
     <schema name="onewallet" checkSQLschema="true" sqlMaxLimit="100" dataNode="onewallet"/>
-
-    <dataNode name="pbs" dataHost="host1" database="pbs"/>
     <schema name="pbs" checkSQLschema="true" sqlMaxLimit="100" dataNode="pbs"/>
-
-    <dataNode name="rms" dataHost="host1" database="rms"/>
     <schema name="rms" checkSQLschema="true" sqlMaxLimit="100" dataNode="rms"/>
-
-    <dataNode name="ssop" dataHost="host1" database="ssop"/>
     <schema name="ssop" checkSQLschema="true" sqlMaxLimit="100" dataNode="ssop"/>
-
-    <dataNode name="ues" dataHost="host1" database="ues"/>
     <schema name="ues" checkSQLschema="true" sqlMaxLimit="100" dataNode="ues"/>
-
-    <dataNode name="wallet" dataHost="host1" database="wallet"/>
     <schema name="wallet" checkSQLschema="true" sqlMaxLimit="100" dataNode="wallet"/>
 
+
+    <dataNode name="appdatamonitor" dataHost="host1" database="appdatamonitor"/>
+    <dataNode name="authorize" dataHost="host1" database="authorize"/>
+    <dataNode name="cert" dataHost="host1" database="cert"/>
+    <dataNode name="cmf" dataHost="host1" database="cmf"/>
+    <dataNode name="counter" dataHost="host1" database="counter"/>
+    <dataNode name="event" dataHost="host1" database="event"/>
+    <dataNode name="ffs" dataHost="host1" database="ffs"/>
+    <dataNode name="gop" dataHost="host1" database="gop"/>
+    <dataNode name="guardian" dataHost="host1" database="guardian"/>
+    <dataNode name="information_schema" dataHost="host1" database="information_schema"/>
+    <dataNode name="member" dataHost="host1" database="member"/>
+    <dataNode name="mns" dataHost="host1" database="mns"/>
+    <dataNode name="onewallet" dataHost="host1" database="onewallet"/>
+    <dataNode name="pbs" dataHost="host1" database="pbs"/>
+    <dataNode name="rms" dataHost="host1" database="rms"/>
+    <dataNode name="ssop" dataHost="host1" database="ssop"/>
+    <dataNode name="ues" dataHost="host1" database="ues"/>
+    <dataNode name="wallet" dataHost="host1" database="wallet"/>
 
     <dataNode name="dpm1" dataHost="host1" database="dpm"/>
     <dataNode name="dpm2" dataHost="host2" database="dpm"/>
