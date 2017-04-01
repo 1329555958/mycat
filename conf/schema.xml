@@ -2,7 +2,7 @@
 <!DOCTYPE mycat:schema SYSTEM "schema.dtd">
 <mycat:schema xmlns:mycat="http://io.mycat/">
 
-    <schema name="dpm" checkSQLschema="false" sqlMaxLimit="100">
+    <schema name="dpm" checkSQLschema="true" sqlMaxLimit="100">
         <table name="DUAL" dataNode="dpm1"/>
         <table name="dbajobconf" primaryKey="JOBNAME" dataNode="dpm1"/>
         <table name="dbajoblog" primaryKey="JOBID" dataNode="dpm1"/>
@@ -37,7 +37,7 @@
 
     </schema>
 
-    <schema name="payment" checkSQLschema="false" sqlMaxLimit="100">
+    <schema name="payment" checkSQLschema="true" sqlMaxLimit="100">
         <table name="DUAL" dataNode="payment1"/>
         <table name="t_sequence" primaryKey="NAME" dataNode="payment1"/>
         <table name="tb_biz_config" primaryKey="CONFIG_ID" dataNode="payment1,payment2" rule="rule-payment-payment_seq_no-2"/>
@@ -97,7 +97,7 @@
 
     </schema>
 
-    <schema name="tss" checkSQLschema="false" sqlMaxLimit="100">
+    <schema name="tss" checkSQLschema="true" sqlMaxLimit="100">
         <table name="DUAL" dataNode="tss1"/>
         <table name="t_acq_trade_order_ext" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1"/>
         <table name="t_payment_info" primaryKey="ID" dataNode="tss1"/>
