@@ -194,7 +194,7 @@
     <function name="sharding-by-stringhash10-2-10" class="io.mycat.route.function.PartitionByString">
         <property name="partitionLength">53,971</property><!-- 0-2=>0 3-5=>1 6-9=>2 -->
         <property name="partitionCount">1,1</property>
-        <property name="hashSlice">-10:</property>
+        <property name="hashSlice">-10:-9</property>
     </function>
     <function name="sharding-by-stringhash10-2" class="io.mycat.route.function.PartitionByString">
         <property name="partitionLength">53,971</property><!-- 0-2=>0 3-5=>1 6-9=>2 -->
