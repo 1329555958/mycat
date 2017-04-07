@@ -105,14 +105,14 @@
 
     <schema name="tss" checkSQLschema="true" sqlMaxLimit="100">
         <table name="DUAL" dataNode="tss1"/>
-        <table name="t_acq_trade_order_ext" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1"/>
-        <table name="t_payment_info" primaryKey="ID" dataNode="tss1"/>
+        <table name="t_acq_trade_order_ext" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
+        <table name="t_payment_info" primaryKey="ID" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
         <table name="t_payment_retry_config" primaryKey="ID" dataNode="tss1"/>
-        <table name="t_rfd_trade_order_ext" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1"/>
+        <table name="t_rfd_trade_order_ext" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
         <table name="t_sequence" primaryKey="NAME" dataNode="tss1"/>
-        <table name="t_trade_fee" primaryKey="TRADE_FEE_ID" dataNode="tss1"/>
-        <table name="t_trade_order_setting" primaryKey="SETTING_ID" dataNode="tss1"/>
-        <table name="t_trade_payment_rela" primaryKey="RELA_ID" dataNode="tss1"/>
+        <table name="t_trade_fee" primaryKey="TRADE_FEE_ID" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
+        <table name="t_trade_order_setting" primaryKey="SETTING_ID" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
+        <table name="t_trade_payment_rela" primaryKey="RELA_ID" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
         <table name="t_tss_sequence" primaryKey="name" dataNode="tss1"/>
         <table name="t_trade_order" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1,tss2"
                rule="rule-tss-trade_voucher_no-2"/>
