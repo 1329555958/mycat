@@ -35,7 +35,7 @@
     <tableRule name="rule-payment-request_no-2">
         <rule>
             <columns>REQUEST_NO</columns>
-            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+            <algorithm>sharding-by-stringhash16-2</algorithm>
         </rule>
     </tableRule>
     <tableRule name="rule-payment-biz_payment_seq_no-2">
