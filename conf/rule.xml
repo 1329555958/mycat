@@ -59,7 +59,7 @@
     <tableRule name="rule-payment-settlement_session_id-2">
         <rule>
             <columns>SETTLEMENT_SESSION_ID</columns>
-            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+            <algorithm>sharding-by-stringhash16-2</algorithm>
         </rule>
     </tableRule>
 
