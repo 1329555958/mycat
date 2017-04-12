@@ -2,7 +2,7 @@
 <!DOCTYPE mycat:schema SYSTEM "schema.dtd">
 <mycat:schema xmlns:mycat="http://io.mycat/">
 
-    <schema name="dpm" checkSQLschema="false" sqlMaxLimit="100">
+    <schema name="dpm" checkSQLschema="true" sqlMaxLimit="100">
         <table name="DUAL" dataNode="dpm1"/>
         <table name="dbajobconf" primaryKey="JOBNAME" dataNode="dpm1"/>
         <table name="dbajoblog" primaryKey="JOBID" dataNode="dpm1"/>
@@ -38,7 +38,7 @@
 
     </schema>
 
-    <schema name="payment" checkSQLschema="false" sqlMaxLimit="100">
+    <schema name="payment" checkSQLschema="true" sqlMaxLimit="100">
         <table name="DUAL" dataNode="payment1"/>
         <table name="t_sequence" primaryKey="NAME" dataNode="payment1"/>
         <table name="tb_biz_config" primaryKey="CONFIG_ID" dataNode="payment1,payment2"
@@ -103,7 +103,7 @@
 
     </schema>
 
-    <schema name="tss" checkSQLschema="false" sqlMaxLimit="100">
+    <schema name="tss" checkSQLschema="true" sqlMaxLimit="100">
         <table name="DUAL" dataNode="tss1"/>
         <table name="t_acq_trade_order_ext" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
         <table name="t_payment_info" primaryKey="ID" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
@@ -128,24 +128,24 @@
                rule="rule-tss-payment_voucher_no-2"/>
     </schema>
 
-    <schema name="appdatamonitor" checkSQLschema="false" sqlMaxLimit="100" dataNode="appdatamonitor"/>
-    <schema name="authorize" checkSQLschema="false" sqlMaxLimit="100" dataNode="authorize"/>
-    <schema name="cert" checkSQLschema="false" sqlMaxLimit="100" dataNode="cert"/>
-    <schema name="cmf" checkSQLschema="false" sqlMaxLimit="100" dataNode="cmf"/>
-    <schema name="counter" checkSQLschema="false" sqlMaxLimit="100" dataNode="counter"/>
-    <schema name="event" checkSQLschema="false" sqlMaxLimit="100" dataNode="event"/>
-    <schema name="ffs" checkSQLschema="false" sqlMaxLimit="100" dataNode="ffs"/>
-    <schema name="gop" checkSQLschema="false" sqlMaxLimit="100" dataNode="gop"/>
-    <schema name="guardian" checkSQLschema="false" sqlMaxLimit="100" dataNode="guardian"/>
-    <schema name="information_schema" checkSQLschema="false" sqlMaxLimit="100" dataNode="information_schema"/>
-    <schema name="member" checkSQLschema="false" sqlMaxLimit="100" dataNode="member"/>
-    <schema name="mns" checkSQLschema="false" sqlMaxLimit="100" dataNode="mns"/>
-    <schema name="onewallet" checkSQLschema="false" sqlMaxLimit="100" dataNode="onewallet"/>
-    <schema name="pbs" checkSQLschema="false" sqlMaxLimit="100" dataNode="pbs"/>
-    <schema name="rms" checkSQLschema="false" sqlMaxLimit="100" dataNode="rms"/>
-    <schema name="ssop" checkSQLschema="false" sqlMaxLimit="100" dataNode="ssop"/>
-    <schema name="ues" checkSQLschema="false" sqlMaxLimit="100" dataNode="ues"/>
-    <schema name="wallet" checkSQLschema="false" sqlMaxLimit="100" dataNode="wallet"/>
+    <schema name="appdatamonitor" checkSQLschema="true" sqlMaxLimit="100" dataNode="appdatamonitor"/>
+    <schema name="authorize" checkSQLschema="true" sqlMaxLimit="100" dataNode="authorize"/>
+    <schema name="cert" checkSQLschema="true" sqlMaxLimit="100" dataNode="cert"/>
+    <schema name="cmf" checkSQLschema="true" sqlMaxLimit="100" dataNode="cmf"/>
+    <schema name="counter" checkSQLschema="true" sqlMaxLimit="100" dataNode="counter"/>
+    <schema name="event" checkSQLschema="true" sqlMaxLimit="100" dataNode="event"/>
+    <schema name="ffs" checkSQLschema="true" sqlMaxLimit="100" dataNode="ffs"/>
+    <schema name="gop" checkSQLschema="true" sqlMaxLimit="100" dataNode="gop"/>
+    <schema name="guardian" checkSQLschema="true" sqlMaxLimit="100" dataNode="guardian"/>
+    <schema name="information_schema" checkSQLschema="true" sqlMaxLimit="100" dataNode="information_schema"/>
+    <schema name="member" checkSQLschema="true" sqlMaxLimit="100" dataNode="member"/>
+    <schema name="mns" checkSQLschema="true" sqlMaxLimit="100" dataNode="mns"/>
+    <schema name="onewallet" checkSQLschema="true" sqlMaxLimit="100" dataNode="onewallet"/>
+    <schema name="pbs" checkSQLschema="true" sqlMaxLimit="100" dataNode="pbs"/>
+    <schema name="rms" checkSQLschema="true" sqlMaxLimit="100" dataNode="rms"/>
+    <schema name="ssop" checkSQLschema="true" sqlMaxLimit="100" dataNode="ssop"/>
+    <schema name="ues" checkSQLschema="true" sqlMaxLimit="100" dataNode="ues"/>
+    <schema name="wallet" checkSQLschema="true" sqlMaxLimit="100" dataNode="wallet"/>
 
 
     <dataNode name="appdatamonitor" dataHost="host1" database="appdatamonitor"/>
