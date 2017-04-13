@@ -14,9 +14,7 @@
         <property name="useGlobleTableCheck">0</property>  <!-- 1为开启全加班一致性检测、0为关闭 -->
 
         <property name="sequnceHandlerType">2</property>
-        <property name="serverPort">8166</property>
-        <property name="managerPort">9166</property>
-
+        <property name="serverPort">9922</property>
         <!--<property name="sqlInterceptor">com.vf.mycat.interceptor.VFInterceptor</property>-->
         <!--<property name="sqlInterceptorType">show</property>-->
         <!--  <property name="useCompression">1</property>--> <!--1为开启mysql压缩协议-->
