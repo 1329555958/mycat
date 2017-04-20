@@ -177,14 +177,14 @@
     <dataHost name="host1" maxCon="1000" minCon="10" balance="0"
               writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100">
         <heartbeat>select user()</heartbeat>
-        <writeHost host="hostM1" url="10.65.215.17:23310" user="root"
+        <writeHost host="hostM1" url="10.65.215.17:3306" user="root"
                    password="mycat">
         </writeHost>
     </dataHost>
     <dataHost name="host2" maxCon="1000" minCon="10" balance="0"
               writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100">
         <heartbeat>select user()</heartbeat>
-        <writeHost host="hostM1" url="10.65.215.18:23311" user="root"
+        <writeHost host="hostM1" url="10.65.215.18:3306" user="root"
                    password="mycat">
         </writeHost>
     </dataHost>
