@@ -1,5 +1,5 @@
 #!/bin/bash
-#http://gitlab.vfinance.cn/weichunhe/mycat/tree/master
+#http://weichunhe:11111111@gitlab.vfinance.cn/weichunhe/mycat.git
 ./bin/mycat stop
 git pull
 rm -f ../logs/*.log
