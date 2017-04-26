@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+
+    <schema name="dpm" checkSQLschema="true" sqlMaxLimit="100">
+        <table name="DUAL" dataNode="dpm1"/>
+        <table name="dbajobconf" primaryKey="JOBNAME" dataNode="dpm1"/>
+        <table name="dbajoblog" primaryKey="JOBID" dataNode="dpm1"/>
+        <table name="t_act_account_titile" primaryKey="TITLE_SEQ_NO" dataNode="dpm1"/>
+        <table name="t_dpm_account_crl_def" dataNode="dpm1"/>
+        <table name="t_dpm_account_entry" primaryKey="ENTRY_SEQ_NO" dataNode="dpm1"/>
+        <table name="t_dpm_buffer_detail" primaryKey="BUFFER_DETAIL_ID" dataNode="dpm1,dpm2,dpm3"
+               rule="rule-transaction-no-3"/>
+
+        <table name="t_dpm_buffer_detail_log" primaryKey="BUFFER_DETAIL_ID" dataNode="dpm1,dpm2,dpm3"
+               rule="rule-transaction-no-3"/>
+        <table name="t_dpm_buffer_rule" primaryKey="BUFFER_RULE_ID" dataNode="dpm1"/>
+        <table name="t_dpm_pay_transaction" primaryKey="TRANSACTION_ID" dataNode="dpm1,dpm2,dpm3"
+               rule="rule-transaction-no-3"/>
+        <table name="t_dpm_subacc_fundattribute" dataNode="dpm1"/>
+
+        <table name="tb_title_daily" primaryKey="ID" dataNode="dpm1"/>
+
+        <table name="t_dpm_inner_account" primaryKey="ACCOUNT_NO" dataNode="dpm1,dpm2,dpm3" rule="rule-account-no-3">
+            <childTable name="t_dpm_inner_account_detail" primaryKey="TXN_SEQ_NO" joinKey="ACCOUNT_NO"
+                        parentKey="ACCOUNT_NO"/>
+        </table>
+
+        <table name="t_dpm_outer_account" primaryKey="ACCOUNT_NO" dataNode="dpm1,dpm2,dpm3" rule="rule-account-no-3">
+            <childTable name="t_dpm_outer_account_detail" primaryKey="TXN_SEQ_NO" joinKey="ACCOUNT_NO"
+                        parentKey="ACCOUNT_NO"/>
+        </table>
+
+        <table name="t_dpm_outer_account_subset" primaryKey="ACCOUNT_NO" dataNode="dpm1,dpm2,dpm3" rule="rule-account-no-3">
+            <childTable name="t_dpm_outer_account_sub_detail" primaryKey="ACCOUNT_SUBSET_LOG_ID" joinKey="ACCOUNT_NO"
+                        parentKey="ACCOUNT_NO"/>
+        </table>
+
+    </schema>
+
+    <schema name="payment" checkSQLschema="true" sqlMaxLimit="100">
+        <table name="DUAL" dataNode="payment1"/>
+        <table name="t_sequence" primaryKey="NAME" dataNode="payment1"/>
+        <table name="tb_biz_config" primaryKey="CONFIG_ID" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-payment_seq_no-3"/>
+        <table name="tb_biz_payment_order" primaryKey="NAME" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-biz_payment_seq_no-3"/>
+        <table name="tb_settlement_template" dataNode="payment1"/>
+        <table name="tb_settlement_session" primaryKey="SETTLEMENT_SESSION_ID" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-settlement_session_id-3"/>
+        <table name="tb_settlement_order" primaryKey="SETTLEMENT_ORDER_ID" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-session_id-3"/>
+        <table name="tb_settlement_cycle" dataNode="payment1"/>
+        <table name="tb_session_template" dataNode="payment1"/>
+        <table name="tb_retry_lock" dataNode="payment1"/>
+        <table name="tb_refund_limit" dataNode="payment1"/>
+        <table name="tb_refresh" dataNode="payment1"/>
+        <table name="tb_ps_cs_rule_relation" dataNode="payment1"/>
+        <table name="tb_payment_state_mapping" dataNode="payment1"/>
+        <table name="tb_payment_state_his" primaryKey="HIS_ID" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-payment_seq_no-3"/>
+        <table name="tb_payment_state" primaryKey="PAYMENT_SEQ_NO" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-payment_seq_no-3"/>
+        <table name="tb_payment_service_code" dataNode="payment1"/>
+        <table name="tb_payment_service" dataNode="payment1"/>
+        <table name="tb_payment_retry_ctrl" dataNode="payment1"/>
+        <table name="tb_payment_process" dataNode="payment1"/>
+        <table name="tb_payment_order" primaryKey="PAYMENT_SEQ_NO" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-payment_seq_no-3"/>
+        <table name="tb_payment_ctrl" primaryKey="CTRL_ID" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-biz_payment_seq_no-3"/>
+        <table name="tb_party_payment_funds" primaryKey="PAYMENT_FUNDS_ID" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-payment_seq_no-3"/>
+        <table name="tb_party_payment" primaryKey="PAYMENT_PARTY_ID" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-payment_seq_no-3"/>
+        <table name="tb_party_info" primaryKey="ID" dataNode="payment1"/>
+        <table name="tb_party_account" primaryKey="ID" dataNode="payment1"/>
+        <table name="tb_message_eventcode" dataNode="payment1"/>
+        <table name="tb_message_config" dataNode="payment1"/>
+        <table name="tb_message" primaryKey="MESSAGE_ID" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-message_key-3"/>
+        <table name="tb_machine_monitor" dataNode="payment1"/>
+        <table name="tb_generate_map" dataNode="payment1"/>
+        <table name="tb_generate_group" dataNode="payment1"/>
+        <table name="tb_generate" dataNode="payment1"/>
+        <table name="tb_funds_payment_result" primaryKey="PAYMENT_SEQ_NO" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-payment_seq_no-3"/>
+        <table name="tb_funds_payment_ctrl" primaryKey="CTRL_ID" dataNode="payment1"/>
+        <table name="tb_daemon_task_trigger" dataNode="payment1"/>
+        <table name="tb_cs_rule_item_outer" dataNode="payment1"/>
+        <table name="tb_cs_rule_item_inner" dataNode="payment1"/>
+        <table name="tb_cs_rule" primaryKey="NAME" dataNode="payment1"/>
+        <table name="tb_cs_carrier" primaryKey="REQUEST_NO" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-session_id-3"/>
+        <table name="tb_cs_agreement" dataNode="payment1"/>
+        <table name="tb_clearing_order_outer" primaryKey="CLEARING_ORDER_ID" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-request_no-3"/>
+        <table name="tb_clearing_order_inner" primaryKey="CLEARING_ORDER_ID" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-request_no-3"/>
+        <table name="tb_clearing_code" dataNode="payment1"/>
+        <table name="tb_biz_state_his" primaryKey="HIS_ID" dataNode="payment1,payment2,payment3"
+               rule="rule-payment-biz_payment_seq_no-3"/>
+
+    </schema>
+
+    <schema name="tss" checkSQLschema="true" sqlMaxLimit="100">
+        <table name="DUAL" dataNode="tss1"/>
+        <table name="t_acq_trade_order_ext" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1,tss2,tss3" rule="rule-tss-trade_voucher_no-3"/>
+        <table name="t_payment_info" primaryKey="ID" dataNode="tss1,tss2,tss3" rule="rule-tss-trade_voucher_no-3"/>
+        <table name="t_payment_retry_config" primaryKey="ID" dataNode="tss1"/>
+        <table name="t_rfd_trade_order_ext" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1,tss2,tss3" rule="rule-tss-trade_voucher_no-3"/>
+        <table name="t_sequence" primaryKey="NAME" dataNode="tss1"/>
+        <table name="t_trade_fee" primaryKey="TRADE_FEE_ID" dataNode="tss1,tss2,tss3" rule="rule-tss-trade_voucher_no-3"/>
+        <table name="t_trade_order_setting" primaryKey="SETTING_ID" dataNode="tss1,tss2,tss3" rule="rule-tss-trade_voucher_no-3"/>
+        <table name="t_trade_payment_rela" primaryKey="RELA_ID" dataNode="tss1,tss2,tss3" rule="rule-tss-trade_voucher_no-3"/>
+        <table name="t_tss_sequence" primaryKey="name" dataNode="tss1"/>
+        <table name="t_trade_order" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1,tss2,tss3"
+               rule="rule-tss-trade_voucher_no-3"/>
+        <table name="t_trade_bank_card" primaryKey="TRADE_CARD_RELA_ID" dataNode="tss1,tss2,tss3"
+               rule="rule-tss-trade_voucher_no-3"/>
+        <table name="t_trade_status_his" primaryKey="HIS_ID" dataNode="tss1,tss2,tss3" rule="rule-tss-trade_voucher_no-3"/>
+        <table name="t_split_party" primaryKey="SPLIT_ID" dataNode="tss1,tss2,tss3" rule="rule-tss-trade_voucher_no-3"/>
+        <table name="t_payment_order" primaryKey="PAYMENT_VOUCHER_NO" dataNode="tss1,tss2,tss3"
+               rule="rule-tss-payment_voucher_no-3"/>
+        <table name="t_pay_method" primaryKey="PAY_METHOD_ID" dataNode="tss1,tss2,tss3"
+               rule="rule-tss-payment_voucher_no-3"/>
+        <table name="t_payment_party" primaryKey="PAYMENT_PARTY_ID" dataNode="tss1,tss2,tss3"
+               rule="rule-tss-payment_voucher_no-3"/>
+    </schema>
+
+    <schema name="appdatamonitor" checkSQLschema="true" sqlMaxLimit="100" dataNode="appdatamonitor"/>
+    <schema name="authorize" checkSQLschema="true" sqlMaxLimit="100" dataNode="authorize"/>
+    <schema name="cert" checkSQLschema="true" sqlMaxLimit="100" dataNode="cert"/>
+    <schema name="cmf" checkSQLschema="true" sqlMaxLimit="100" dataNode="cmf"/>
+    <schema name="counter" checkSQLschema="true" sqlMaxLimit="100" dataNode="counter"/>
+    <schema name="event" checkSQLschema="true" sqlMaxLimit="100" dataNode="event"/>
+    <schema name="ffs" checkSQLschema="true" sqlMaxLimit="100" dataNode="ffs"/>
+    <schema name="gop" checkSQLschema="true" sqlMaxLimit="100" dataNode="gop"/>
+    <schema name="guardian" checkSQLschema="true" sqlMaxLimit="100" dataNode="guardian"/>
+    <schema name="information_schema" checkSQLschema="true" sqlMaxLimit="100" dataNode="information_schema"/>
+    <schema name="member" checkSQLschema="true" sqlMaxLimit="100" dataNode="member"/>
+    <schema name="mns" checkSQLschema="true" sqlMaxLimit="100" dataNode="mns"/>
+    <schema name="onewallet" checkSQLschema="true" sqlMaxLimit="100" dataNode="onewallet"/>
+    <schema name="pbs" checkSQLschema="true" sqlMaxLimit="100" dataNode="pbs"/>
+    <schema name="rms" checkSQLschema="true" sqlMaxLimit="100" dataNode="rms"/>
+    <schema name="ssop" checkSQLschema="true" sqlMaxLimit="100" dataNode="ssop"/>
+    <schema name="ues" checkSQLschema="true" sqlMaxLimit="100" dataNode="ues"/>
+    <schema name="wallet" checkSQLschema="true" sqlMaxLimit="100" dataNode="wallet"/>
+
+
+    <dataNode name="appdatamonitor" dataHost="host1" database="appdatamonitor"/>
+    <dataNode name="authorize" dataHost="host1" database="authorize"/>
+    <dataNode name="cert" dataHost="host1" database="cert"/>
+    <dataNode name="cmf" dataHost="host1" database="cmf"/>
+    <dataNode name="counter" dataHost="host1" database="counter"/>
+    <dataNode name="event" dataHost="host1" database="event"/>
+    <dataNode name="ffs" dataHost="host1" database="ffs"/>
+    <dataNode name="gop" dataHost="host1" database="gop"/>
+    <dataNode name="guardian" dataHost="host1" database="guardian"/>
+    <dataNode name="information_schema" dataHost="host1" database="information_schema"/>
+    <dataNode name="member" dataHost="host1" database="member"/>
+    <dataNode name="mns" dataHost="host1" database="mns"/>
+    <dataNode name="onewallet" dataHost="host1" database="onewallet"/>
+    <dataNode name="pbs" dataHost="host1" database="pbs"/>
+    <dataNode name="rms" dataHost="host1" database="rms"/>
+    <dataNode name="ssop" dataHost="host1" database="ssop"/>
+    <dataNode name="ues" dataHost="host1" database="ues"/>
+    <dataNode name="wallet" dataHost="host1" database="wallet"/>
+
+    <dataNode name="dpm1" dataHost="host1" database="dpm"/>
+    <dataNode name="dpm2" dataHost="host2" database="dpm"/>
+    <dataNode name="dpm3" dataHost="host3" database="dpm"/>
+    <dataNode name="payment1" dataHost="host1" database="payment"/>
+    <dataNode name="payment2" dataHost="host2" database="payment"/>
+    <dataNode name="payment3" dataHost="host3" database="payment"/>
+    <dataNode name="tss1" dataHost="host1" database="tss"/>
+    <dataNode name="tss2" dataHost="host2" database="tss"/>
+    <dataNode name="tss3" dataHost="host3" database="tss"/>
+
+    <dataHost name="host1" maxCon="1000" minCon="10" balance="0"
+              writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100">
+        <heartbeat>select user()</heartbeat>
+        <writeHost host="hostM1" url="10.65.215.17:3306" user="root"
+                   password="mycat">
+        </writeHost>
+    </dataHost>
+    <dataHost name="host2" maxCon="1000" minCon="10" balance="0"
+              writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100">
+        <heartbeat>select user()</heartbeat>
+        <writeHost host="hostM1" url="10.65.215.18:3306" user="root"
+                   password="mycat">
+        </writeHost>
+    </dataHost>
+    <dataHost name="host3" maxCon="1000" minCon="10" balance="0"
+              writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100">
+        <heartbeat>select user()</heartbeat>
+        <writeHost host="hostM1" url="10.65.215.18:3306" user="root"
+                   password="mycat">
+        </writeHost>
+    </dataHost>
+</mycat:schema>
