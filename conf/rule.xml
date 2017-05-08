@@ -210,6 +210,46 @@
         </rule>
     </tableRule>
     <!-- tss end -->
+    <!-- member -->
+    <!-- 两个节点 -->
+    <tableRule name="rule-member-object_id-2">
+        <rule>
+            <columns>OBJECT_ID</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-member-member_id-2">
+        <rule>
+            <columns>MEMBER_ID</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-member-account_id-2">
+        <rule>
+            <columns>ACCOUNT_ID</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+    <!-- 五个节点 -->
+    <tableRule name="rule-member-object_id-2">
+        <rule>
+            <columns>OBJECT_ID</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-member-member_id-2">
+        <rule>
+            <columns>MEMBER_ID</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-member-account_id-2">
+        <rule>
+            <columns>ACCOUNT_ID</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
+    <!-- member end -->
     <!--配置结束 -->
     <tableRule name="sharding-by-intfile">
         <rule>

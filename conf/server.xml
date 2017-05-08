@@ -82,7 +82,7 @@
 
     <user name="root">
         <property name="password">123456</property>
-        <property name="schemas">dpm,payment,tss</property>
+        <property name="schemas">dpm,payment,tss,member</property>
         <!-- 表级 DML 权限设置 -->
         <!--
         <privileges check="false">
@@ -97,17 +97,18 @@
     <user name="dpmuser">
         <property name="password">dpmuser</property>
         <property name="schemas">dpm</property>
-        <!--<property name="readOnly">true</property>-->
     </user>
     <user name="paymentuser">
         <property name="password">paymentuser</property>
         <property name="schemas">payment</property>
-        <!--<property name="readOnly">true</property>-->
     </user>
     <user name="tssuser">
         <property name="password">tssuser</property>
         <property name="schemas">tss</property>
-        <!--<property name="readOnly">true</property>-->
+    </user>
+    <user name="memberuser">
+        <property name="password">memberuser</property>
+        <property name="schemas">member</property>
     </user>
     <user name="reader">
         <property name="password">reader</property>
