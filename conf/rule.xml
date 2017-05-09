@@ -231,19 +231,19 @@
         </rule>
     </tableRule>
     <!-- 五个节点 -->
-    <tableRule name="rule-member-object_id-2">
+    <tableRule name="rule-member-object_id-5">
         <rule>
             <columns>OBJECT_ID</columns>
             <algorithm>sharding-by-stringhash10-5-1</algorithm>
         </rule>
     </tableRule>
-    <tableRule name="rule-member-member_id-2">
+    <tableRule name="rule-member-member_id-5">
         <rule>
             <columns>MEMBER_ID</columns>
             <algorithm>sharding-by-stringhash10-5-1</algorithm>
         </rule>
     </tableRule>
-    <tableRule name="rule-member-account_id-2">
+    <tableRule name="rule-member-account_id-5">
         <rule>
             <columns>ACCOUNT_ID</columns>
             <algorithm>sharding-by-stringhash10-5-1</algorithm>
