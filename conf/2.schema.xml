@@ -191,7 +191,7 @@
     <dataNode name="tss1" dataHost="host1" database="tss"/>
     <dataNode name="tss2" dataHost="host2" database="tss"/>
     <dataNode name="member1" dataHost="host1" database="member"/>
-    <dataNode name="member2" dataHost="host1" database="member"/>
+    <dataNode name="member2" dataHost="host2" database="member"/>
 
     <dataHost name="host1" maxCon="1000" minCon="10" balance="0"
               writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100">
