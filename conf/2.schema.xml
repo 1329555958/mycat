@@ -28,7 +28,7 @@
 
     </schema>
 
-    <schema name="payment" checkSQLschema="true" sqlMaxLimit="100"  dataNode="payment1">
+    <schema name="payment" checkSQLschema="true" sqlMaxLimit="100" dataNode="payment1">
         <table name="tb_biz_config" primaryKey="CONFIG_ID" dataNode="payment1,payment2"
                rule="rule-payment-payment_seq_no-2"/>
         <table name="tb_biz_payment_order" primaryKey="NAME" dataNode="payment1,payment2"
@@ -65,12 +65,16 @@
     </schema>
 
     <schema name="tss" checkSQLschema="true" sqlMaxLimit="100" dataNode="tss1">
-        <table name="t_acq_trade_order_ext" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
+        <table name="t_acq_trade_order_ext" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1,tss2"
+               rule="rule-tss-trade_voucher_no-2"/>
         <table name="t_payment_info" primaryKey="ID" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
-        <table name="t_rfd_trade_order_ext" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
+        <table name="t_rfd_trade_order_ext" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1,tss2"
+               rule="rule-tss-trade_voucher_no-2"/>
         <table name="t_trade_fee" primaryKey="TRADE_FEE_ID" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
-        <table name="t_trade_order_setting" primaryKey="SETTING_ID" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
-        <table name="t_trade_payment_rela" primaryKey="RELA_ID" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
+        <table name="t_trade_order_setting" primaryKey="SETTING_ID" dataNode="tss1,tss2"
+               rule="rule-tss-trade_voucher_no-2"/>
+        <table name="t_trade_payment_rela" primaryKey="RELA_ID" dataNode="tss1,tss2"
+               rule="rule-tss-trade_voucher_no-2"/>
         <table name="t_trade_order" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1,tss2"
                rule="rule-tss-trade_voucher_no-2"/>
         <table name="t_trade_bank_card" primaryKey="TRADE_CARD_RELA_ID" dataNode="tss1,tss2"
@@ -88,49 +92,73 @@
     <schema name="member" checkSQLschema="true" sqlMaxLimit="100" dataNode="member1">
         <table name="tm_contact" primaryKey="CONTACT_ID" dataNode="member1,member2" rule="rule-member-object_id-2"/>
         <table name="tm_member" primaryKey="MEMBER_ID" dataNode="member1,member2" rule="rule-member-member_id-2"/>
-        <table name="tm_member_identity" primaryKey="IDENTITY" dataNode="member1,member2" rule="rule-member-member_id-2"/>
+        <table name="tm_member_identity" primaryKey="IDENTITY" dataNode="member1,member2"
+               rule="rule-member-member_id-2"/>
         <table name="tm_merchant" primaryKey="MERCHANT_ID" dataNode="member1,member2" rule="rule-member-member_id-2"/>
         <table name="tm_operator" primaryKey="OPERATOR_ID" dataNode="member1,member2" rule="rule-member-member_id-2"/>
         <table name="tm_pwd_operator_lock" primaryKey="ID" dataNode="member1,member2" rule="rule-member-account_id-2"/>
         <table name="tm_pwd_wrong_input" primaryKey="ID" dataNode="member1,member2" rule="rule-member-account_id-2"/>
 
         <table name="tr_bank_account" primaryKey="ID" dataNode="member1,member2" rule="rule-member-member_id-2"/>
-        <table name="tr_company_member" primaryKey="MEMBER_ID" dataNode="member1,member2" rule="rule-member-member_id-2"/>
+        <table name="tr_company_member" primaryKey="MEMBER_ID" dataNode="member1,member2"
+               rule="rule-member-member_id-2"/>
         <table name="tr_login_name" primaryKey="login_id" dataNode="member1,member2" rule="rule-member-member_id-2"/>
-        <table name="tr_login_question" primaryKey="MEMBER_ID" dataNode="member1,member2" rule="rule-member-member_id-2"/>
+        <table name="tr_login_question" primaryKey="MEMBER_ID" dataNode="member1,member2"
+               rule="rule-member-member_id-2"/>
         <table name="tr_login_record" primaryKey="ID" dataNode="member1,member2" rule="rule-member-member_id-2"/>
         <table name="tr_member_account" primaryKey="ID" dataNode="member1,member2" rule="rule-member-member_id-2"/>
         <table name="tr_password" primaryKey="ID" dataNode="member1,member2" rule="rule-member-account_id-2"/>
-        <table name="tr_personal_member" primaryKey="MEMBER_ID" dataNode="member1,member2" rule="rule-member-member_id-2"/>
+        <table name="tr_personal_member" primaryKey="MEMBER_ID" dataNode="member1,member2"
+               rule="rule-member-member_id-2"/>
     </schema>
-    <schema name="cmf" checkSQLschema="true" sqlMaxLimit="100" dataNode="cmf">
+    <schema name="cmf" checkSQLschema="true" sqlMaxLimit="100" dataNode="cmf1">
         <table name="tt_cmf_order" primaryKey="CMF_SEQ_NO" dataNode="cmf1,cmf2" rule="rule-cmf-cmf_seq_no-2"/>
         <table name="tt_cmf_request" primaryKey="PAYMENT_SEQ_NO" dataNode="cmf1,cmf2" rule="rule-cmf-payment_seq_no-2"/>
         <table name="tt_fundin_order" primaryKey="INST_ORDER_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
         <table name="tt_fundout_order" primaryKey="INST_ORDER_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
-        <table name="tt_inst_notify_log" primaryKey="NOTIFY_LOG_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
+        <table name="tt_inst_notify_log" primaryKey="NOTIFY_LOG_ID" dataNode="cmf1,cmf2"
+               rule="rule-cmf-inst_order_id-2"/>
         <table name="tt_inst_order" primaryKey="INST_ORDER_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
         <table name="tt_inst_order_log" primaryKey="LOG_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
         <table name="tt_inst_order_result" primaryKey="RESULT_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
-        <table name="tt_order_submit_history" primaryKey="SUBMIT_HISTORY_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
-        <table name="tt_payment_notify_log" primaryKey="NOTIFY_LOG_ID" dataNode="cmf1,cmf2" rule="rule-cmf-channel_seq_no-2"/>
+        <table name="tt_order_submit_history" primaryKey="SUBMIT_HISTORY_ID" dataNode="cmf1,cmf2"
+               rule="rule-cmf-inst_order_id-2"/>
+        <table name="tt_payment_notify_log" primaryKey="NOTIFY_LOG_ID" dataNode="cmf1,cmf2"
+               rule="rule-cmf-channel_seq_no-2"/>
         <table name="tt_refund_order" primaryKey="INST_ORDER_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
     </schema>
 
+    <schema name="gop" checkSQLschema="true" sqlMaxLimit="100" dataNode="gop1">
+        <table name="t_batch" primaryKey="BATCH_NO" dataNode="gop1,gop2" rule="rule-gop-batch_no-2"/>
+        <table name="t_batch_agencycollect_detail" primaryKey="DETAIL_ID" dataNode="gop1,gop2"
+               rule="rule-gop-batch_no-2"/>
+        <table name="t_batch_paycard_detail" primaryKey="DETAIL_ID" dataNode="gop1,gop2" rule="rule-gop-batch_no-2"/>
+
+        <table name="t_gateway_access" primaryKey="VOUCHER_NO" dataNode="gop1,gop2" rule="rule-gop-voucher_no-2"/>
+        <table name="t_partner_notify" primaryKey="NOTIFY_ID" dataNode="gop1,gop2" rule="rule-gop-notify_id-2"/>
+        <table name="t_partner_notify_log" primaryKey="DETAIL_ID" dataNode="gop1,gop2" rule="rule-gop-notify_id-2"/>
+    </schema>
+
+    <schema name="rms" checkSQLschema="true" sqlMaxLimit="100" dataNode="rms1">
+        <table name="t_operate_log" primaryKey="ID" dataNode="rms1,rms2" rule="rule-rms-risk_id-2"/>
+        <table name="t_risk_event" primaryKey="ID" dataNode="rms1,rms2" rule="rule-rms-biz_key-2"/>
+    </schema>
+
+    <schema name="ffs" checkSQLschema="true" sqlMaxLimit="100" dataNode="ffs1">
+        <table name="t_collect_unit" primaryKey="UNIT_ID" dataNode="ffs1,ffs2" rule="rule-ffs-event_id-2"/>
+        <table name="t_stat_val" primaryKey="STAT_ID" dataNode="ffs1,ffs2" rule="rule-ffs-unit_id-2"/>
+    </schema>
 
     <schema name="appdatamonitor" checkSQLschema="true" sqlMaxLimit="100" dataNode="appdatamonitor"/>
     <schema name="authorize" checkSQLschema="true" sqlMaxLimit="100" dataNode="authorize"/>
     <schema name="cert" checkSQLschema="true" sqlMaxLimit="100" dataNode="cert"/>
     <schema name="counter" checkSQLschema="true" sqlMaxLimit="100" dataNode="counter"/>
     <schema name="event" checkSQLschema="true" sqlMaxLimit="100" dataNode="event"/>
-    <schema name="ffs" checkSQLschema="true" sqlMaxLimit="100" dataNode="ffs"/>
-    <schema name="gop" checkSQLschema="true" sqlMaxLimit="100" dataNode="gop"/>
     <schema name="guardian" checkSQLschema="true" sqlMaxLimit="100" dataNode="guardian"/>
     <schema name="information_schema" checkSQLschema="true" sqlMaxLimit="100" dataNode="information_schema"/>
     <schema name="mns" checkSQLschema="true" sqlMaxLimit="100" dataNode="mns"/>
     <schema name="onewallet" checkSQLschema="true" sqlMaxLimit="100" dataNode="onewallet"/>
     <schema name="pbs" checkSQLschema="true" sqlMaxLimit="100" dataNode="pbs"/>
-    <schema name="rms" checkSQLschema="true" sqlMaxLimit="100" dataNode="rms"/>
     <schema name="ssop" checkSQLschema="true" sqlMaxLimit="100" dataNode="ssop"/>
     <schema name="ues" checkSQLschema="true" sqlMaxLimit="100" dataNode="ues"/>
     <schema name="wallet" checkSQLschema="true" sqlMaxLimit="100" dataNode="wallet"/>
@@ -141,14 +169,11 @@
     <dataNode name="cert" dataHost="host1" database="cert"/>
     <dataNode name="counter" dataHost="host1" database="counter"/>
     <dataNode name="event" dataHost="host1" database="event"/>
-    <dataNode name="ffs" dataHost="host1" database="ffs"/>
-    <dataNode name="gop" dataHost="host1" database="gop"/>
     <dataNode name="guardian" dataHost="host1" database="guardian"/>
     <dataNode name="information_schema" dataHost="host1" database="information_schema"/>
     <dataNode name="mns" dataHost="host1" database="mns"/>
     <dataNode name="onewallet" dataHost="host1" database="onewallet"/>
     <dataNode name="pbs" dataHost="host1" database="pbs"/>
-    <dataNode name="rms" dataHost="host1" database="rms"/>
     <dataNode name="ssop" dataHost="host1" database="ssop"/>
     <dataNode name="ues" dataHost="host1" database="ues"/>
     <dataNode name="wallet" dataHost="host1" database="wallet"/>
@@ -159,12 +184,16 @@
     <dataNode name="payment2" dataHost="host2" database="payment"/>
     <dataNode name="tss1" dataHost="host1" database="tss"/>
     <dataNode name="tss2" dataHost="host2" database="tss"/>
-
     <dataNode name="member1" dataHost="host1" database="member"/>
     <dataNode name="member2" dataHost="host2" database="member"/>
     <dataNode name="cmf1" dataHost="host1" database="cmf"/>
     <dataNode name="cmf2" dataHost="host2" database="cmf"/>
-
+    <dataNode name="gop1" dataHost="host1" database="gop"/>
+    <dataNode name="gop2" dataHost="host2" database="gop"/>
+    <dataNode name="rms1" dataHost="host1" database="rms"/>
+    <dataNode name="rms2" dataHost="host2" database="rms"/>
+    <dataNode name="ffs1" dataHost="host1" database="ffs"/>
+    <dataNode name="ffs2" dataHost="host2" database="ffs"/>
 
     <dataHost name="host1" maxCon="1000" minCon="10" balance="0"
               writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100">

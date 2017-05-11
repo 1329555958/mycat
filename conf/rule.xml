@@ -303,6 +303,108 @@
         </rule>
     </tableRule>
     <!-- cmf end -->
+
+    <!-- gop -->
+    <!-- 两个节点 -->
+    <tableRule name="rule-gop-batch_no-2">
+        <rule>
+            <columns>BATCH_NO</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+
+    <tableRule name="rule-gop-voucher_no-2">
+        <rule>
+            <columns>VOUCHER_NO</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-gop-notify_id-2">
+        <rule>
+            <columns>NOTIFY_ID</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+
+    <!-- 五个节点 -->
+    <tableRule name="rule-gop-batch_no-5">
+        <rule>
+            <columns>BATCH_NO</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
+
+    <tableRule name="rule-gop-voucher_no-5">
+        <rule>
+            <columns>VOUCHER_NO</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-gop-notify_id-5">
+        <rule>
+            <columns>NOTIFY_ID</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
+    <!-- gop end -->
+    <!-- rms -->
+    <!-- 两个节点 -->
+    <tableRule name="rule-rms-risk_id-2">
+        <rule>
+            <columns>RISK_ID</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-rms-biz_key-2">
+        <rule>
+            <columns>BIZ_KEY</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+    <!-- 五个节点 -->
+    <tableRule name="rule-rms-risk_id-5">
+        <rule>
+            <columns>RISK_ID</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-rms-biz_key-5">
+        <rule>
+            <columns>BIZ_KEY</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
+    <!-- rms end -->
+
+    <!-- ffs -->
+    <!-- 两个节点 -->
+    <tableRule name="rule-ffs-event_id-2">
+        <rule>
+            <columns>EVENT_ID</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-ffs-unit_id-2">
+        <rule>
+            <columns>UNIT_ID</columns>
+            <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+    <!-- 五个节点 -->
+    <tableRule name="rule-ffs-event_id-5">
+        <rule>
+            <columns>EVENT_ID</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-ffs-unit_id-5">
+        <rule>
+            <columns>UNIT_ID</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
+    <!-- ffs end -->
+
     <!--配置结束 -->
     <tableRule name="sharding-by-intfile">
         <rule>
