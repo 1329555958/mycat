@@ -277,6 +277,31 @@
             <algorithm>sharding-by-stringhash10-2-1</algorithm>
         </rule>
     </tableRule>
+    <!-- 五个节点 -->
+    <tableRule name="rule-cmf-cmf_seq_no-5">
+        <rule>
+            <columns>CMF_SEQ_NO</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-cmf-payment_seq_no-5">
+        <rule>
+            <columns>PAYMENT_SEQ_NO</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-cmf-inst_order_id-5">
+        <rule>
+            <columns>INST_ORDER_ID</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-cmf-channel_seq_no-5">
+        <rule>
+            <columns>CHANNEL_SEQ_NO</columns>
+            <algorithm>sharding-by-stringhash10-5-1</algorithm>
+        </rule>
+    </tableRule>
     <!-- cmf end -->
     <!--配置结束 -->
     <tableRule name="sharding-by-intfile">

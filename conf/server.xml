@@ -82,7 +82,8 @@
 
     <user name="root">
         <property name="password">123456</property>
-        <property name="schemas">dpm,payment,tss,member</property>
+        <property name="schemas">appdatamonitor, authorize, cert, cmf ,counter ,dpm ,event ,ffs ,gop, guardian
+            ,information_schema ,member ,mns ,onewallet ,payment, pbs, rms ,ssop ,tss, ues ,wallet</property>
         <!-- 表级 DML 权限设置 -->
         <!--
         <privileges check="false">
@@ -109,6 +110,22 @@
     <user name="memberuser">
         <property name="password">memberuser</property>
         <property name="schemas">member</property>
+    </user>
+    <user name="cmfuser">
+        <property name="password">cmfuser</property>
+        <property name="schemas">cmf</property>
+    </user>
+    <user name="gopuser">
+        <property name="password">gopuser</property>
+        <property name="schemas">gop</property>
+    </user>
+    <user name="ffsuser">
+        <property name="password">ffsuser</property>
+        <property name="schemas">ffs</property>
+    </user>
+    <user name="rmsuser">
+        <property name="password">rmsuser</property>
+        <property name="schemas">rms</property>
     </user>
     <user name="reader">
         <property name="password">reader</property>
