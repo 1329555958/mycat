@@ -146,11 +146,24 @@
         <table name="tr_password" primaryKey="ID" dataNode="member1,member2" rule="rule-member-account_id-2"/>
         <table name="tr_personal_member" primaryKey="MEMBER_ID" dataNode="member1,member2" rule="rule-member-member_id-2"/>
     </schema>
+    <schema name="cmf" checkSQLschema="true" sqlMaxLimit="100" dataNode="cmf">
+        <table name="tt_cmf_order" primaryKey="CMF_SEQ_NO" dataNode="cmf1,cmf2" rule="rule-cmf-cmf_seq_no-2"/>
+        <table name="tt_cmf_request" primaryKey="PAYMENT_SEQ_NO" dataNode="cmf1,cmf2" rule="rule-cmf-payment_seq_no-2"/>
+        <table name="tt_fundin_order" primaryKey="INST_ORDER_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
+        <table name="tt_fundout_order" primaryKey="INST_ORDER_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
+        <table name="tt_inst_notify_log" primaryKey="NOTIFY_LOG_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
+        <table name="tt_inst_order" primaryKey="INST_ORDER_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
+        <table name="tt_inst_order_log" primaryKey="LOG_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
+        <table name="tt_inst_order_result" primaryKey="RESULT_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
+        <table name="tt_order_submit_history" primaryKey="SUBMIT_HISTORY_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
+        <table name="tt_payment_notify_log" primaryKey="NOTIFY_LOG_ID" dataNode="cmf1,cmf2" rule="rule-cmf-channel_seq_no-2"/>
+        <table name="tt_refund_order" primaryKey="INST_ORDER_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
+    </schema>
+
 
     <schema name="appdatamonitor" checkSQLschema="true" sqlMaxLimit="100" dataNode="appdatamonitor"/>
     <schema name="authorize" checkSQLschema="true" sqlMaxLimit="100" dataNode="authorize"/>
     <schema name="cert" checkSQLschema="true" sqlMaxLimit="100" dataNode="cert"/>
-    <schema name="cmf" checkSQLschema="true" sqlMaxLimit="100" dataNode="cmf"/>
     <schema name="counter" checkSQLschema="true" sqlMaxLimit="100" dataNode="counter"/>
     <schema name="event" checkSQLschema="true" sqlMaxLimit="100" dataNode="event"/>
     <schema name="ffs" checkSQLschema="true" sqlMaxLimit="100" dataNode="ffs"/>
@@ -169,7 +182,6 @@
     <dataNode name="appdatamonitor" dataHost="host1" database="appdatamonitor"/>
     <dataNode name="authorize" dataHost="host1" database="authorize"/>
     <dataNode name="cert" dataHost="host1" database="cert"/>
-    <dataNode name="cmf" dataHost="host1" database="cmf"/>
     <dataNode name="counter" dataHost="host1" database="counter"/>
     <dataNode name="event" dataHost="host1" database="event"/>
     <dataNode name="ffs" dataHost="host1" database="ffs"/>
@@ -190,8 +202,12 @@
     <dataNode name="payment2" dataHost="host2" database="payment"/>
     <dataNode name="tss1" dataHost="host1" database="tss"/>
     <dataNode name="tss2" dataHost="host2" database="tss"/>
+
     <dataNode name="member1" dataHost="host1" database="member"/>
     <dataNode name="member2" dataHost="host2" database="member"/>
+    <dataNode name="cmf1" dataHost="host1" database="cmf"/>
+    <dataNode name="cmf2" dataHost="host2" database="cmf"/>
+
 
     <dataHost name="host1" maxCon="1000" minCon="10" balance="0"
               writeType="0" dbType="mysql" dbDriver="native" switchType="1" slaveThreshold="100">
