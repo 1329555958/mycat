@@ -151,7 +151,6 @@
     <schema name="counter" checkSQLschema="true" sqlMaxLimit="100" dataNode="counter"/>
     <schema name="event" checkSQLschema="true" sqlMaxLimit="100" dataNode="event"/>
     <schema name="guardian" checkSQLschema="true" sqlMaxLimit="100" dataNode="guardian"/>
-    <schema name="information_schema" checkSQLschema="true" sqlMaxLimit="100" dataNode="information_schema"/>
     <schema name="mns" checkSQLschema="true" sqlMaxLimit="100" dataNode="mns"/>
     <schema name="onewallet" checkSQLschema="true" sqlMaxLimit="100" dataNode="onewallet"/>
     <schema name="pbs" checkSQLschema="true" sqlMaxLimit="100" dataNode="pbs"/>
@@ -166,7 +165,6 @@
     <dataNode name="counter" dataHost="host1" database="counter"/>
     <dataNode name="event" dataHost="host1" database="event"/>
     <dataNode name="guardian" dataHost="host1" database="guardian"/>
-    <dataNode name="information_schema" dataHost="host1" database="information_schema"/>
     <dataNode name="mns" dataHost="host1" database="mns"/>
     <dataNode name="onewallet" dataHost="host1" database="onewallet"/>
     <dataNode name="pbs" dataHost="host1" database="pbs"/>
