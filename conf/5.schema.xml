@@ -140,6 +140,7 @@
     </schema>
 
     <schema name="ffs" checkSQLschema="true" sqlMaxLimit="100" dataNode="ffs1">
+        <table name="t_biz_event" primaryKey="EVENT_ID" dataNode="ffs1,ffs2,ffs3,ffs4,ffs5" rule="rule-ffs-event_id-5"/>
         <table name="t_collect_unit" primaryKey="UNIT_ID" dataNode="ffs1,ffs2,ffs3,ffs4,ffs5" rule="rule-ffs-event_id-5"/>
         <table name="t_stat_val" primaryKey="STAT_ID" dataNode="ffs1,ffs2,ffs3,ffs4,ffs5" rule="rule-ffs-unit_id-5"/>
     </schema>
