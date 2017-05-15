@@ -83,7 +83,7 @@
     <user name="root">
         <property name="password">123456</property>
         <property name="schemas">appdatamonitor, authorize, cert, cmf ,counter ,dpm ,event ,ffs ,gop, guardian
-            ,information_schema ,member ,mns ,onewallet ,payment, pbs, rms ,ssop ,tss, ues ,wallet</property>
+             ,member ,mns ,onewallet ,payment, pbs, rms ,ssop ,tss, ues ,wallet</property>
         <!-- 表级 DML 权限设置 -->
         <!--
         <privileges check="false">
