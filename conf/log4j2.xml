@@ -22,7 +22,7 @@
             <!--<AppenderRef ref="Console"/>-->
             <!--<AppenderRef ref="RollingFile"/>-->
         <!--</AsyncLogger>-->
-        <asyncRoot level="info" includeLocation="true">
+        <asyncRoot level="error" includeLocation="true">
 
             <AppenderRef ref="Console" />
             <AppenderRef ref="RollingFile"/>
