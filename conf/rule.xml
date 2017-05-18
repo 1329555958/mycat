@@ -230,6 +230,25 @@
             <algorithm>sharding-by-stringhash10-2-1</algorithm>
         </rule>
     </tableRule>
+    <!-- 三个节点 -->
+    <tableRule name="rule-member-object_id-3">
+        <rule>
+            <columns>OBJECT_ID</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-member-member_id-3">
+        <rule>
+            <columns>MEMBER_ID</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-member-account_id-3">
+        <rule>
+            <columns>ACCOUNT_ID</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
+        </rule>
+    </tableRule>
     <!-- 五个节点 -->
     <tableRule name="rule-member-object_id-5">
         <rule>
@@ -275,6 +294,31 @@
         <rule>
             <columns>CHANNEL_SEQ_NO</columns>
             <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+    <!-- 三个节点 -->
+    <tableRule name="rule-cmf-cmf_seq_no-3">
+        <rule>
+            <columns>CMF_SEQ_NO</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-cmf-payment_seq_no-3">
+        <rule>
+            <columns>PAYMENT_SEQ_NO</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-cmf-inst_order_id-3">
+        <rule>
+            <columns>INST_ORDER_ID</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-cmf-channel_seq_no-3">
+        <rule>
+            <columns>CHANNEL_SEQ_NO</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
         </rule>
     </tableRule>
     <!-- 五个节点 -->
@@ -325,7 +369,26 @@
             <algorithm>sharding-by-stringhash10-2-1</algorithm>
         </rule>
     </tableRule>
+    <!-- 三个节点 -->
+    <tableRule name="rule-gop-batch_no-3">
+        <rule>
+            <columns>BATCH_NO</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
+        </rule>
+    </tableRule>
 
+    <tableRule name="rule-gop-voucher_no-3">
+        <rule>
+            <columns>VOUCHER_NO</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-gop-notify_id-3">
+        <rule>
+            <columns>NOTIFY_ID</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
+        </rule>
+    </tableRule>
     <!-- 五个节点 -->
     <tableRule name="rule-gop-batch_no-5">
         <rule>
@@ -361,6 +424,19 @@
             <algorithm>sharding-by-stringhash10-2-1</algorithm>
         </rule>
     </tableRule>
+    <!-- 三个节点 -->
+    <tableRule name="rule-rms-risk_id-3">
+        <rule>
+            <columns>RISK_ID</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-rms-biz_key-3">
+        <rule>
+            <columns>BIZ_KEY</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
+        </rule>
+    </tableRule>
     <!-- 五个节点 -->
     <tableRule name="rule-rms-risk_id-5">
         <rule>
@@ -388,6 +464,19 @@
         <rule>
             <columns>UNIT_ID</columns>
             <algorithm>sharding-by-stringhash10-2-1</algorithm>
+        </rule>
+    </tableRule>
+    <!-- 三个节点 -->
+    <tableRule name="rule-ffs-event_id-3">
+        <rule>
+            <columns>EVENT_ID</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="rule-ffs-unit_id-3">
+        <rule>
+            <columns>UNIT_ID</columns>
+            <algorithm>sharding-by-stringhash10-3-1</algorithm>
         </rule>
     </tableRule>
     <!-- 五个节点 -->
