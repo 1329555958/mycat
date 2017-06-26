@@ -2,7 +2,7 @@
 <!DOCTYPE mycat:schema SYSTEM "schema.dtd">
 <mycat:schema xmlns:mycat="http://io.mycat/">
 
-    <schema name="dpm" checkSQLschema="true" sqlMaxLimit="100" dataNode="dpm1">
+    <schema name="dpm" checkSQLschema="true"  dataNode="dpm1">
         <table name="t_dpm_buffer_detail" primaryKey="BUFFER_DETAIL_ID" dataNode="dpm1,dpm2"
                rule="rule-transaction-no-2"/>
 
@@ -28,7 +28,7 @@
 
     </schema>
 
-    <schema name="payment" checkSQLschema="true" sqlMaxLimit="100" dataNode="payment1">
+    <schema name="payment" checkSQLschema="true"  dataNode="payment1">
         <table name="tb_biz_config" primaryKey="CONFIG_ID" dataNode="payment1,payment2"
                rule="rule-payment-payment_seq_no-2"/>
         <table name="tb_biz_payment_order" primaryKey="NAME" dataNode="payment1,payment2"
@@ -64,7 +64,7 @@
 
     </schema>
 
-    <schema name="tss" checkSQLschema="true" sqlMaxLimit="100" dataNode="tss1">
+    <schema name="tss" checkSQLschema="true"  dataNode="tss1">
         <table name="t_acq_trade_order_ext" primaryKey="TRADE_VOUCHER_NO" dataNode="tss1,tss2"
                rule="rule-tss-trade_voucher_no-2"/>
         <table name="t_payment_info" primaryKey="ID" dataNode="tss1,tss2" rule="rule-tss-trade_voucher_no-2"/>
@@ -89,7 +89,7 @@
                rule="rule-tss-payment_voucher_no-2"/>
     </schema>
 
-    <schema name="member" checkSQLschema="true" sqlMaxLimit="100" dataNode="member1">
+    <schema name="member" checkSQLschema="true"  dataNode="member1">
         <table name="tm_contact" primaryKey="CONTACT_ID" dataNode="member1,member2" rule="rule-member-object_id-2"/>
         <table name="tm_member" primaryKey="MEMBER_ID" dataNode="member1,member2" rule="rule-member-member_id-2"/>
         <table name="tm_member_identity" primaryKey="IDENTITY" dataNode="member1,member2"
@@ -111,7 +111,7 @@
         <table name="tr_personal_member" primaryKey="MEMBER_ID" dataNode="member1,member2"
                rule="rule-member-member_id-2"/>
     </schema>
-    <schema name="cmf" checkSQLschema="true" sqlMaxLimit="100" dataNode="cmf1">
+    <schema name="cmf" checkSQLschema="true"  dataNode="cmf1">
         <table name="tt_cmf_order" primaryKey="CMF_SEQ_NO" dataNode="cmf1,cmf2" rule="rule-cmf-cmf_seq_no-2"/>
         <table name="tt_cmf_request" primaryKey="PAYMENT_SEQ_NO" dataNode="cmf1,cmf2" rule="rule-cmf-payment_seq_no-2"/>
         <table name="tt_fundin_order" primaryKey="INST_ORDER_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
@@ -128,7 +128,7 @@
         <table name="tt_refund_order" primaryKey="INST_ORDER_ID" dataNode="cmf1,cmf2" rule="rule-cmf-inst_order_id-2"/>
     </schema>
 
-    <schema name="gop" checkSQLschema="true" sqlMaxLimit="100" dataNode="gop1">
+    <schema name="gop" checkSQLschema="true"  dataNode="gop1">
         <table name="t_batch" primaryKey="BATCH_NO" dataNode="gop1,gop2" rule="rule-gop-batch_no-2"/>
         <table name="t_batch_agencycollect_detail" primaryKey="DETAIL_ID" dataNode="gop1,gop2"
                rule="rule-gop-batch_no-2"/>
@@ -139,29 +139,29 @@
         <table name="t_partner_notify_log" primaryKey="DETAIL_ID" dataNode="gop1,gop2" rule="rule-gop-notify_id-2"/>
     </schema>
 
-    <schema name="rms" checkSQLschema="true" sqlMaxLimit="100" dataNode="rms1">
+    <schema name="rms" checkSQLschema="true"  dataNode="rms1">
         <table name="t_operate_log" primaryKey="ID" dataNode="rms1,rms2" rule="rule-rms-risk_id-2"/>
         <table name="t_risk_event" primaryKey="ID" dataNode="rms1,rms2" rule="rule-rms-biz_key-2"/>
     </schema>
 
-    <schema name="ffs" checkSQLschema="true" sqlMaxLimit="100" dataNode="ffs1">
+    <schema name="ffs" checkSQLschema="true"  dataNode="ffs1">
         <table name="t_biz_event" primaryKey="EVENT_ID" dataNode="ffs1,ffs2" rule="rule-ffs-event_id-2"/>
         <table name="t_collect_unit" primaryKey="UNIT_ID" dataNode="ffs1,ffs2" rule="rule-ffs-event_id-2"/>
         <table name="t_stat_val" primaryKey="STAT_ID" dataNode="ffs1,ffs2" rule="rule-ffs-unit_id-2"/>
     </schema>
 
-    <schema name="appdatamonitor" checkSQLschema="true" sqlMaxLimit="100" dataNode="appdatamonitor"/>
-    <schema name="authorize" checkSQLschema="true" sqlMaxLimit="100" dataNode="authorize"/>
-    <schema name="cert" checkSQLschema="true" sqlMaxLimit="100" dataNode="cert"/>
-    <schema name="counter" checkSQLschema="true" sqlMaxLimit="100" dataNode="counter"/>
-    <schema name="event" checkSQLschema="true" sqlMaxLimit="100" dataNode="event"/>
-    <schema name="guardian" checkSQLschema="true" sqlMaxLimit="100" dataNode="guardian"/>
-    <schema name="mns" checkSQLschema="true" sqlMaxLimit="100" dataNode="mns"/>
-    <schema name="onewallet" checkSQLschema="true" sqlMaxLimit="100" dataNode="onewallet"/>
-    <schema name="pbs" checkSQLschema="true" sqlMaxLimit="100" dataNode="pbs"/>
-    <schema name="ssop" checkSQLschema="true" sqlMaxLimit="100" dataNode="ssop"/>
-    <schema name="ues" checkSQLschema="true" sqlMaxLimit="100" dataNode="ues"/>
-    <schema name="wallet" checkSQLschema="true" sqlMaxLimit="100" dataNode="wallet"/>
+    <schema name="appdatamonitor" checkSQLschema="true"  dataNode="appdatamonitor"/>
+    <schema name="authorize" checkSQLschema="true"  dataNode="authorize"/>
+    <schema name="cert" checkSQLschema="true"  dataNode="cert"/>
+    <schema name="counter" checkSQLschema="true"  dataNode="counter"/>
+    <schema name="event" checkSQLschema="true"  dataNode="event"/>
+    <schema name="guardian" checkSQLschema="true"  dataNode="guardian"/>
+    <schema name="mns" checkSQLschema="true"  dataNode="mns"/>
+    <schema name="onewallet" checkSQLschema="true"  dataNode="onewallet"/>
+    <schema name="pbs" checkSQLschema="true"  dataNode="pbs"/>
+    <schema name="ssop" checkSQLschema="true"  dataNode="ssop"/>
+    <schema name="ues" checkSQLschema="true"  dataNode="ues"/>
+    <schema name="wallet" checkSQLschema="true"  dataNode="wallet"/>
 
 
     <dataNode name="appdatamonitor" dataHost="host1" database="appdatamonitor"/>
